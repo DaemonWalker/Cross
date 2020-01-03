@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Autofac.Extras.DynamicProxy;
+using Cross.Share;
+using System;
 
 namespace Cross.IService
 {
-    public class Class1
+    public interface IAccountService : IBaseService
     {
+        object Login(string account, string password);
     }
 }

@@ -11,10 +11,11 @@ namespace Cross.DependencyInjections
         public static IServiceCollection AddRepository(this IServiceCollection serviceDescriptors)
         {
             serviceDescriptors.AddSingleton<DBContext>();
-            serviceDescriptors.AddSingleton<IUserRepository, UserRepository>();
-            serviceDescriptors.AddSingleton<IItemRepository, ItemRepository>();
-            serviceDescriptors.AddSingleton<ICommentRepository, CommentRepository>();
-            serviceDescriptors.AddSingleton<ITagRepository, TagRepository>();
+            serviceDescriptors.AddSingleton(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            //serviceDescriptors.AddSingleton<IUserRepository, UserRepository>();
+            //serviceDescriptors.AddSingleton<IItemRepository, ItemRepository>();
+            //serviceDescriptors.AddSingleton<ICommentRepository, CommentRepository>();
+            //serviceDescriptors.AddSingleton<ITagRepository, TagRepository>();
 
             return serviceDescriptors;
         }

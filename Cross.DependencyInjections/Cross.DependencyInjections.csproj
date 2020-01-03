@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Castle.Core" Version="4.4.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cross.IRepository\Cross.IRepository.csproj" />
+    <ProjectReference Include="..\Cross.IService\Cross.IService.csproj" />
     <ProjectReference Include="..\Cross.Repository\Cross.Repository.csproj" />
+    <ProjectReference Include="..\Cross.Service\Cross.Service.csproj" />
   </ItemGroup>
 
 </Project>

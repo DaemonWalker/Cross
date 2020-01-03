@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cross.IRepository\Cross.IRepository.csproj" />
+    <ProjectReference Include="..\Cross.IService\Cross.IService.csproj" />
+  </ItemGroup>
+
 </Project>
