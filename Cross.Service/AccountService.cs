@@ -1,6 +1,8 @@
-﻿using Cross.Dtos;
+﻿using AutoMapper;
+using Cross.Dtos;
 using Cross.IRepository;
 using Cross.IService;
+using Cross.Models;
 using System;
 using System.Linq;
 
@@ -8,16 +10,38 @@ namespace Cross.Service
 {
     public class AccountService : IAccountService
     {
-        private readonly IBaseRepository<UserDto> _user;
-        public AccountService(IBaseRepository<UserDto> user)
+        private readonly IAccountRepository _accountRepository;
+        private readonly IMapper _mapper;
+        public AccountService(IAccountRepository accountRepository, IMapper mapper)
         {
-            this._user = user;
+            this._mapper = mapper;
+            this._accountRepository = accountRepository;
         }
 
-        public object Login(string account, string password)
+        public AccountModel GetUserInfo(int ID)
         {
-            var user = _user.Query(dbSet => dbSet.Where(p => p.Account == account && p.Password == password)).FirstOrDefault();
-            return user != null;
+            var dto = _accountRepository.GetByID(ID);
+            return _mapper.Map<AccountModel>(dto);
+        }
+
+        public LoginModel Login(string account, string password)
+        {
+            var dto = _accountRepository.GetByAccountAndPassword(account, password);
+            return _mapper.Map<LoginModel>(dto);
+        }
+
+        public AccountModel Regist(AccountModel account)
+        {
+            var dto = _mapper.Map<AccountDto>(account);
+            dto = _accountRepository.Add(dto);
+            return _mapper.Map<AccountModel>(dto);
+        }
+
+        public AccountModel UpdateInfo(AccountModel account)
+        {
+            var dto = _mapper.Map<AccountDto>(account);
+            dto = _accountRepository.Modify(dto);
+            return _mapper.Map<AccountModel>(dto);
         }
     }
 }

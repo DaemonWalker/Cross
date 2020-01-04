@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cross.DependencyInjections\Cross.DependencyInjections.csproj" />
-    <ProjectReference Include="..\Cross.ResourceLib\Cross.ResourceLib.csproj" />
     <ProjectReference Include="..\Cross.Tests.Share\Cross.Tests.Share.csproj" />
   </ItemGroup>
 

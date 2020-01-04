@@ -13,6 +13,6 @@ namespace Cross.Dtos
         public string Content { get; set; }
         public double Mark { get; set; }
         public DateTime Date { get; set; }
-        public UserDto User { get; set; }
+        public AccountDto User { get; set; }
     }
 }

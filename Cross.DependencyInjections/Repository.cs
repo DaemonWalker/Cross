@@ -1,4 +1,5 @@
-﻿using Cross.IRepository;
+﻿using Cross.DBContexts;
+using Cross.IRepository;
 using Cross.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -8,10 +9,9 @@ namespace Cross.DependencyInjections
 {
     public static class Repository
     {
-        public static IServiceCollection AddRepository(this IServiceCollection serviceDescriptors)
+        public static IServiceCollection AddRepositories(this IServiceCollection serviceDescriptors)
         {
-            serviceDescriptors.AddSingleton<DBContext>();
-            serviceDescriptors.AddSingleton(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            serviceDescriptors.AddSingleton<IAccountRepository, AccountRepository>();
             //serviceDescriptors.AddSingleton<IUserRepository, UserRepository>();
             //serviceDescriptors.AddSingleton<IItemRepository, ItemRepository>();
             //serviceDescriptors.AddSingleton<ICommentRepository, CommentRepository>();

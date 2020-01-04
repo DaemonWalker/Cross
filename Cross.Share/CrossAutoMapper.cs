@@ -9,7 +9,7 @@ namespace Cross.Share
     {
         public CrossAutoMapper()
         {
-            CreateMap<LoginModel, UserDto>()
+            CreateMap<LoginModel, AccountDto>()
                 .AfterMap((model, dto) =>
                 {
                     dto.Password = model.Password.EncrptPassword();
