@@ -16,6 +16,12 @@ namespace Cross.DBContexts
         {
             this._configuration = configuration;
         }
+
+        public List<ItemDto> Where()
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<T> GetDbSet<T>() where T : class
         {
             IQueryable dbSet = null;
@@ -35,6 +41,10 @@ namespace Cross.DBContexts
             {
                 dbSet = Item;
             }
+            else if (IsSameType<T, ItemTagDto>())
+            {
+                dbSet = ItemTag;
+            }
             else
             {
                 var prop = this.GetType().GetProperties().Where(p => p.Name.Contains("DbSet") && p.Name.Contains(typeof(T).Name)).First();
@@ -46,7 +56,7 @@ namespace Cross.DBContexts
         public DbSet<TagDto> Tag { get; set; }
         public DbSet<CommentDto> Comment { get; set; }
         public DbSet<ItemDto> Item { get; set; }
-        public List<CommentDto> Where { get; internal set; }
+        public DbSet<ItemTagDto> ItemTag { get; set; }
 
         private static bool IsSameType<T1, T2>() => typeof(T1) == typeof(T2);
     }

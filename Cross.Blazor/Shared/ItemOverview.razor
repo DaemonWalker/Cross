@@ -1,0 +1,21 @@
+﻿@inject ItemApi itemApi
+<div class="card">
+    @if (model != null)
+    {
+        <img class="card-img-top" src="@model.ImgPath" />
+        <div class="card-body">
+            <h5 class="card-title">@model.Name</h5>
+            <p class="card-text">@model.Overview</p>
+            <a href="Item?id=@ItemID" class="btn btn-primary">查看</a>
+        </div>
+    }
+</div>
+@code {
+    [Parameter]
+    public int ItemID { get; set; }
+    private ItemOverviewModel model = null;
+    protected override void OnInitialized()
+    {
+        model = itemApi.GetOverview(ItemID);
+    }
+}

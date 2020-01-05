@@ -36,10 +36,8 @@ namespace Cross.Blazor
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddDependcies(Configuration);
-            services.AddAutoMapper(new Assembly[0]);
+            services.AddAutoMapper(Array.Empty<Assembly>());
             services.AddSingleton<LogApi>();
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
-            services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,8 +58,6 @@ namespace Cross.Blazor
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

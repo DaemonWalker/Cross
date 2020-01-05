@@ -11,9 +11,10 @@ namespace Cross.Dtos
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public List<TagDto> Tags { get; set; }
+        public int? TagID { get; set; }
         public double Mark { get; set; }
-        public  DateTime PublishDate { get; set; }
+        public DateTime PublishDate { get; set; }
         public string Artists { get; set; }
+        public int IsDelete { get; set; }
     }
 }
