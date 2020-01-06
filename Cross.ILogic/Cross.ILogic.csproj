@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cross.IRepository\Cross.IRepository.csproj" />
-    <ProjectReference Include="..\Cross.IService\Cross.IService.csproj" />
+    <ProjectReference Include="..\Cross.Models\Cross.Models.csproj" />
+    <ProjectReference Include="..\Cross.Share\Cross.Share.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cross.IService
+namespace Cross.ILogic
 {
-    public interface IItemService
+    public interface IItemLogic
     {
         List<ItemOverviewModel> RandomGet();
         ItemViewModel GetItem(int id);

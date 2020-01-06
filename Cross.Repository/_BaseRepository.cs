@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Cross.Repository
 {
-    public abstract class BaseRepository<T> where T : class
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly BaseDbContext _dbContext;
         protected virtual DbSet<T> GetDbSet()

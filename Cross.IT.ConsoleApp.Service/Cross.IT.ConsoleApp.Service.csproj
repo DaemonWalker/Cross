@@ -17,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cross.IService\Cross.IService.csproj" />
     <ProjectReference Include="..\Cross.Repository\Cross.Repository.csproj" />
-    <ProjectReference Include="..\Cross.Service\Cross.Service.csproj" />
     <ProjectReference Include="..\Cross.Tests.Share\Cross.Tests.Share.csproj" />
   </ItemGroup>
 

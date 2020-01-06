@@ -22,16 +22,12 @@ namespace Cross.Repository
 
         public IEnumerable<ItemDto> GetByTag(string tag)
         {
-            return _dbContext.Tag.Where(p => p.Name == tag)
-                  .Join(_dbContext.ItemTag, tag => tag.ID, it => it.TagID, (tag, it) => it)
-                  .Join(_dbContext.Item, it => it.ItemID, item => item.ID, (it, item) => item);
+            return _dbContext.Item.Include(p => p.ItemTags).ThenInclude(p => p.Tag).Where(p => p.ItemTags.Any(q => q.Tag.Name == tag));
         }
 
         public IEnumerable<ItemDto> GetByTags(IEnumerable<string> tags)
         {
-            return _dbContext.Tag.Where(p => tags.Contains(p.Name))
-                   .Join(_dbContext.ItemTag, tag => tag.ID, it => it.TagID, (tag, it) => it)
-                   .Join(_dbContext.Item, it => it.ItemID, item => item.ID, (it, item) => item);
+            throw new NotImplementedException();
         }
 
         public ItemDto GetItem(int id)

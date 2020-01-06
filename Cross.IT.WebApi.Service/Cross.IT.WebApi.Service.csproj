@@ -12,8 +12,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Cross.DependencyInjections\Cross.DependencyInjections.csproj" />
     <ProjectReference Include="..\Cross.IRepository\Cross.IRepository.csproj" />
-    <ProjectReference Include="..\Cross.IService\Cross.IService.csproj" />
-    <ProjectReference Include="..\Cross.Service\Cross.Service.csproj" />
     <ProjectReference Include="..\Cross.Share\Cross.Share.csproj" />
   </ItemGroup>
 

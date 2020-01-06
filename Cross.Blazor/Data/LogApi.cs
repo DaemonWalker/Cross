@@ -1,4 +1,5 @@
-﻿using Cross.IService;
+﻿using Cross.ILogic;
+using Cross.IService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace Cross.Blazor.Data
 {
     public class LogApi
     {
-        private readonly IAccountService _accountService;
-        public LogApi(IAccountService accountService)
+        private readonly IAccountLogic _accountLogic;
+        public LogApi(IAccountLogic accountLogic)
         {
-            this._accountService = accountService;
+            this._accountLogic = accountLogic;
         }
     }
 }

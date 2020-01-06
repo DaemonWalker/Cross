@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cross.IRepository
 {
-    public interface IItemRepository
+    public interface IItemRepository : IBaseRepository<ItemDto>
     {
         IEnumerable<ItemDto> RandomGet();
         ItemDto GetItem(int id);

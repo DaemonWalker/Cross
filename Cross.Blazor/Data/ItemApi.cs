@@ -1,4 +1,5 @@
-﻿using Cross.IService;
+﻿using Cross.ILogic;
+using Cross.IService;
 using Cross.Models;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,10 @@ namespace Cross.Blazor.Data
 {
     public class ItemApi
     {
-        public readonly IItemService _itemService;
-        public ItemApi(IItemService itemService)
+        public readonly IItemLogic _itemLogic;
+        public ItemApi(IItemLogic itemLogic)
         {
-            this._itemService = itemService;
+            this._itemLogic = itemLogic;
         }
         public ItemOverviewModel GetOverview(int id)
         {

@@ -1,18 +1,19 @@
 ﻿using AutoMapper;
 using Cross.Dtos;
+using Cross.ILogic;
 using Cross.IRepository;
 using Cross.IService;
 using Cross.Models;
 using System;
 using System.Linq;
 
-namespace Cross.Service
+namespace Cross.Logic
 {
-    public class AccountService : IAccountService
+    public class AccountLogic : IAccountLogic
     {
         private readonly IAccountRepository _accountRepository;
         private readonly IMapper _mapper;
-        public AccountService(IAccountRepository accountRepository, IMapper mapper)
+        public AccountLogic(IAccountRepository accountRepository, IMapper mapper)
         {
             this._mapper = mapper;
             this._accountRepository = accountRepository;
@@ -33,14 +34,14 @@ namespace Cross.Service
         public AccountModel Regist(AccountModel account)
         {
             var dto = _mapper.Map<AccountDto>(account);
-            dto = _accountRepository.Add(dto);
+            dto = _accountRepository.Insert(dto);
             return _mapper.Map<AccountModel>(dto);
         }
 
         public AccountModel UpdateInfo(AccountModel account)
         {
             var dto = _mapper.Map<AccountDto>(account);
-            dto = _accountRepository.Modify(dto);
+            dto = _accountRepository.Update(dto);
             return _mapper.Map<AccountModel>(dto);
         }
     }

@@ -5,11 +5,9 @@ using System.Text;
 
 namespace Cross.IRepository
 {
-    public interface IAccountRepository
+    public interface IAccountRepository : IBaseRepository<AccountDto>
     {
         AccountDto GetByAccountAndPassword(string account, string password);
-        AccountDto Add(AccountDto account);
-        AccountDto Modify(AccountDto account);
         AccountDto GetByID(int ID);
 
     }

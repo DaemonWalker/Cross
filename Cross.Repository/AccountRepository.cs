@@ -30,14 +30,5 @@ namespace Cross.Repository
             return Query(dbSet => dbSet.Where(p => p.ID == ID)).FirstOrDefault();
         }
 
-        public AccountDto Add(AccountDto account)
-        {
-            return Insert(account);
-        }
-
-        public AccountDto Modify(AccountDto account)
-        {
-            return Update(account);
-        }
     }
 }

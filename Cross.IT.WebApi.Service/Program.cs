@@ -10,7 +10,6 @@ using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Cross.DependencyInjections;
 using Cross.IService;
-using Cross.Service;
 using Cross.Share;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

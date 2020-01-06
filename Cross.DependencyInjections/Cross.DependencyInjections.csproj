@@ -12,10 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cross.ILogic\Cross.ILogic.csproj" />
     <ProjectReference Include="..\Cross.IRepository\Cross.IRepository.csproj" />
-    <ProjectReference Include="..\Cross.IService\Cross.IService.csproj" />
+    <ProjectReference Include="..\Cross.Logic\Cross.Logic.csproj" />
     <ProjectReference Include="..\Cross.Repository\Cross.Repository.csproj" />
-    <ProjectReference Include="..\Cross.Service\Cross.Service.csproj" />
   </ItemGroup>
 
 </Project>
