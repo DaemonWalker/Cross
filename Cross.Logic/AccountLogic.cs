@@ -19,9 +19,9 @@ namespace Cross.Logic
             this._accountRepository = accountRepository;
         }
 
-        public AccountModel GetUserInfo(int ID)
+        public AccountModel GetUserInfo(int id)
         {
-            var dto = _accountRepository.GetByID(ID);
+            var dto = _accountRepository.GetByID(id);
             return _mapper.Map<AccountModel>(dto);
         }
 

@@ -10,7 +10,7 @@ namespace Cross.Dtos
         public string Account { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public string Level { get; set; }
+        public string Group { get; set; }
         public DateTime RegisteDate { get; set; }
     }
 }
