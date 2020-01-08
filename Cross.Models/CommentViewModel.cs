@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cross.Models
 {
-    public class CommentShowModel
+    public class CommentViewModel
     {
         public string Comment { get; set; }
         public int Up { get; set; }

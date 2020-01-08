@@ -37,7 +37,7 @@ namespace Cross.Blazor
             services.AddServerSideBlazor();
             services.AddDependcies(Configuration);
             services.AddAutoMapper(Array.Empty<Assembly>());
-            services.AddSingleton<LogApi>();
+            services.AddSingleton<LogServicecs>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

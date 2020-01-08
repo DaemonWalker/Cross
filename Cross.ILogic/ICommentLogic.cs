@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cross.IService
+namespace Cross.ILogic
 {
     public interface ICommentLogic
     {
-        List<CommentShowModel> GetCommentsByItemID(int itemID);
-        CommentShowModel Add(CommentModel comment);
+        List<CommentViewModel> GetByItemIDOrderByTime(int itemID, int skip = 0, int take = 0);
+        List<CommentViewModel> GetByItemIDOrderByUp(int itemID, int skip = 0, int take = 0);
+        CommentViewModel Add(CommentModel comment);
         public void Delete(int commentID);
-        void Modify(CommentModel comment);
+        CommentViewModel Modify(CommentModel comment);
     }
 }
